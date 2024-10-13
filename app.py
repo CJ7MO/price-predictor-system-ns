@@ -196,10 +196,10 @@ col1, col2, col3 = st.columns([0.4690, 0.062, 0.4690])
 with col2:
     if st.button("Predecir", key="predict_button"):
         try:
-            #precio_estimado = reg.predict(input_data)[0]
+            precio_estimado = reg.predict(input_data)[0]
             if 'key' not in st.session_state:
                 st.session_state['key'] = st.session_state.precio_estimado
-            #st.session_state.precio_estimado = f"${precio_estimado:,.2f}"
+            st.session_state.precio_estimado = f"${precio_estimado:,.2f}"
             st.session_state.button_text = "Predicción realizada"
         
         except ValueError:
