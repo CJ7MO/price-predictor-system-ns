@@ -201,8 +201,9 @@ with col2:
                 st.session_state['key'] = st.session_state.precio_estimado
             st.session_state.precio_estimado = f"${precio_estimado:,.2f}"
             st.session_state.button_text = "Predicción realizada"
-        
+            st.rerun()
+            st.success(f"Precio estimado del inmueble es: {st.session_state.precio_estimado}")
         except ValueError:
             st.warning("Por favor, ingresa valores válidos en todos los campos.")
         
-        st.rerun()
+        
