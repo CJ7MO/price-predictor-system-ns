@@ -160,6 +160,14 @@ with col9:
 with col10:
     precio_input = st.text_input("Precio del Inmueble:", placeholder="Precio del inmueble según el modelo", value=st.session_state.precio_estimado)
 
+if area_input & habitaciones_input & baños_input != None:
+    try:
+        area = float(area_input)
+        habitaciones = float(habitaciones_input)
+        baños = float(baños_input)
+        input_data = [[area, habitaciones, baños]]
+    except ValueError:
+        st.warning("Por favor, ingresa valores numéricos en todos los campos.")
 
 st.markdown("""
     <style>
@@ -176,13 +184,13 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # Convertir las entradas a float
-# try:
-#     area = float(area_input)
-#     habitaciones = float(habitaciones_input)
-#     baños = float(baños_input)
-#     input_data = [[area, habitaciones, baños]]
-# except ValueError:
-#     st.warning("Por favor, ingresa valores numéricos en todos los campos.")
+try:
+    area = float(area_input)
+    habitaciones = float(habitaciones_input)
+    baños = float(baños_input)
+    input_data = [[area, habitaciones, baños]]
+except ValueError:
+    st.warning("Por favor, ingresa valores numéricos en todos los campos.")
 
 col1, col2, col3 = st.columns([0.4690, 0.062, 0.4690])
 with col2:
