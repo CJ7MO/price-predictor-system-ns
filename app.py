@@ -190,11 +190,5 @@ with col2:
         st.rerun()
 
 if st.session_state.precio_estimado:
-    st.markdown("""
-    <div style="text-align: center; background-color: #d4edda; padding: 10px; border-radius: 5px; color: #155724; border: 1px solid #c3e6cb;">
-        <span style="font-size: 24px;">✔️</span> 
-        <h4>El precio estimado del inmueble es: {}</h4>
-    </div>
-""".format(st.session_state.precio_estimado), unsafe_allow_html=True)
-              
+    st.success(f"El precio estimado del inmueble es: {st.session_state.precio_estimado}", icon="✅")                    
        
