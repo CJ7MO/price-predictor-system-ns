@@ -56,8 +56,6 @@ with col2:
 
 st.subheader("Está aplicación web predice el precio de los inmuebles en Norte de Santander")
 
-df = pd.read_csv('../data/df_model.csv')
-
 col3, col4 = st.columns([0.6, 0.4])
 
 with col3:
