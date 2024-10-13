@@ -189,11 +189,12 @@ if 'clicked' not in st.session_state:
 def click_button():
     st.session_state.clicked = True
 with col2:
-    if st.button("Predecir", key="predict_button", on_click=click_button):
+    st.button("Predecir", key="predict_button", on_click=click_button)
+    if st.session_state.clicked:
         precio_estimado = reg.predict(input_data)[0]
         if 'key' not in st.session_state:
                 st.session_state['key'] = st.session_state.precio_estimado
-        st.session_state.precio_estimado = f"${precio_estimado:,.2f}"
-        st.rerun()
-                
+                st.session_state.precio_estimado = f"${precio_estimado:,.2f}"
+                st.rerun()
+                    
        
