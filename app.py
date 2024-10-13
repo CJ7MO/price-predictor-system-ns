@@ -22,7 +22,7 @@ col1, col2 = st.columns([0.1, 0.9])
 url = 'https://raw.githubusercontent.com/CJ7MO/price-predictor-system-ns/refs/heads/main/data/df_model.csv'
 df = pd.read_csv(url)
 
-X = df.drop('precio', axis=1)
+X = df.drop('Precio', axis=1)
 y = df['Precio']
 reg = pickle.load(open('trained_model.sav', 'rb'))
 
