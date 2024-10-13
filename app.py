@@ -190,5 +190,5 @@ with col2:
         st.rerun()
 
 if st.session_state.precio_estimado:
-    st.success(f"El precio estimado del inmueble es: {st.session_state.precio_estimado}", icon="✅")                    
+    st.success(f"El precio estimado del inmueble es: {st.session_state.precio_estimado}")                    
        
