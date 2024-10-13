@@ -191,10 +191,11 @@ try:
     input_data = [[area, habitaciones, baños]]
 except ValueError:
     st.warning("Por favor, ingresa valores numéricos en los campos de las variables predictoras.")
-
+if 'button_text' not in st.session_state:
+    st.session_state.button_text = "Predecir"
 col1, col2, col3 = st.columns([0.4690, 0.062, 0.4690])
 with col2:
-    if st.button("Predecir", key="predict_button"):
+    if st.button(st.session_state.button_text, key="predict_button"):
         try:
             precio_estimado = reg.predict(input_data)[0]
             if 'key' not in st.session_state:
