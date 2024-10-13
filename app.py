@@ -19,7 +19,8 @@ st.markdown('<style>div.block-container{padding-top:2.5rem;}</style>', unsafe_al
 logo = Image.open('img/logo.png')
 col1, col2 = st.columns([0.1, 0.9])
 
-df = pd.read_csv('https://raw.githubusercontent.com/CJ7MO/price-predictor-system-ns/refs/heads/main/data/df_model.csv')
+url = 'https://raw.githubusercontent.com/CJ7MO/price-predictor-system-ns/refs/heads/main/data/df_model.csv'
+df = pd.read_csv(url, index_col=0)
 
 reg = xgb.XGBRegressor(objective='reg:squarederror', random_state=42, learning_rate=0.35)
 X = df.drop(columns=['Precio'])
