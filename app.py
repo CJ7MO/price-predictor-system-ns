@@ -175,18 +175,16 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-
+# Convertir las entradas a float
+area = float(area_input)
+habitaciones = float(habitaciones_input)
+baños = float(baños_input)
+input_data = [[area, habitaciones, baños]]
 
 col1, col2, col3 = st.columns([0.4690, 0.062, 0.4690])
 with col2:
     if st.button("Predecir", key="predict_button"):
         try:
-            # Convertir las entradas a float
-            area = float(area_input)
-            habitaciones = float(habitaciones_input)
-            baños = float(baños_input)
-
-            input_data = [[area, habitaciones, baños]]
             precio_estimado = reg.predict(input_data)[0]
             if 'key' not in st.session_state:
                 st.session_state['key'] = st.session_state.precio_estimado
