@@ -201,7 +201,6 @@ with col2:
             if 'key' not in st.session_state:
                 st.session_state['key'] = st.session_state.precio_estimado
             st.session_state.precio_estimado = f"${precio_estimado:,.2f}"
-            st.session_state.button_text = "Predicción realizada"
             st.success(f"Precio estimado del inmueble es: {st.session_state.precio_estimado}")
             st.rerun()
             
