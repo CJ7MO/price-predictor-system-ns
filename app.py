@@ -10,7 +10,7 @@ import plotly.express as px
 import plotly.io as pio
 pio.renderers.default = 'browser'
 
-import xgboost as xgb
+import pickle
 
 warnings.filterwarnings('ignore')
 st.set_page_config(page_title="Tech-Camp Oriente", page_icon=":house_buildings:", layout="wide")
@@ -22,10 +22,9 @@ col1, col2 = st.columns([0.1, 0.9])
 url = 'https://raw.githubusercontent.com/CJ7MO/price-predictor-system-ns/refs/heads/main/data/df_model.csv'
 df = pd.read_csv(url)
 
-reg = xgb.XGBRegressor(objective='reg:squarederror', random_state=42, learning_rate=0.35)
-X = df.drop(columns=['Precio'])
+X = df.drop('precio', axis=1)
 y = df['Precio']
-reg.fit(X, y)
+reg = pickle.load(open('trained_model.sav', 'rb'))
 
 y_pred = reg.predict(X)
 residuals = y - y_pred
@@ -171,6 +170,7 @@ st.markdown("""
         border: none;
         border-radius: 5px;
         cursor: pointer;
+        
     }
     </style>
 """, unsafe_allow_html=True)
