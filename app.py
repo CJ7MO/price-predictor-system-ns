@@ -160,7 +160,7 @@ with col9:
 with col10:
     precio_input = st.text_input("Precio del Inmueble:", placeholder="Precio del inmueble según el modelo", value=st.session_state.precio_estimado)
 
-if area_input & habitaciones_input & baños_input != None:
+if area_input and habitaciones_input and baños_input:
     try:
         area = float(area_input)
         habitaciones = float(habitaciones_input)
