@@ -193,5 +193,6 @@ with col2:
         st.rerun()
         st.session_state.button_text = "Predecir"
         
-        
+if precio_input != None:
+    st.success("El precio estimado del inmueble es:",st.session_state.precio_estimado)        
         
