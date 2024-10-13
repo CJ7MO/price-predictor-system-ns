@@ -176,10 +176,13 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # Convertir las entradas a float
-area = float(area_input)
-habitaciones = float(habitaciones_input)
-baños = float(baños_input)
-input_data = [[area, habitaciones, baños]]
+try:
+    area = float(area_input)
+    habitaciones = float(habitaciones_input)
+    baños = float(baños_input)
+    input_data = [[area, habitaciones, baños]]
+except ValueError:
+    st.warning("Por favor, ingresa valores numéricos en todos los campos.")
 
 col1, col2, col3 = st.columns([0.4690, 0.062, 0.4690])
 with col2:
