@@ -181,16 +181,14 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-if 'button_text' not in st.session_state:
-    st.session_state.button_text = "Predecir"
+
 col1, col2, col3 = st.columns([0.4690, 0.062, 0.4690])
 with col2:
-    if st.button(st.session_state.button_text, key="predict_button"):
+    if st.button("Predict", key="predict_button"):
         precio_estimado = reg.predict(input_data)[0]
         if 'key' not in st.session_state:
                 st.session_state['key'] = st.session_state.precio_estimado
         st.session_state.precio_estimado = f"${precio_estimado:,.2f}"
-        st.session_state.button_text = "Predecir"
         st.rerun()
                 
        
