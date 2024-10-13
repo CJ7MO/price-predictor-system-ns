@@ -206,7 +206,7 @@ with col2:
             
         except ValueError:
             st.warning("Por favor, ingresa valores válidos en todos los campos.")
-    col2 = st.columns(1)
-    st.success(f"Precio estimado del inmueble es: {st.session_state.precio_estimado}")
+
+st.session_state.precio_estimado = ""
         
         
