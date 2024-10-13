@@ -176,9 +176,7 @@ st.markdown("""
         color: white;
         padding: 10px 20px;
         border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        
+        border-radius: 5px;        
     }
     </style>
 """, unsafe_allow_html=True)
