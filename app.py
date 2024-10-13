@@ -186,12 +186,12 @@ if 'button_text' not in st.session_state:
 col1, col2, col3 = st.columns([0.4690, 0.062, 0.4690])
 with col2:
     if st.button(st.session_state.button_text, key="predict_button"):
-            precio_estimado = reg.predict(input_data)[0]
-            if 'key' not in st.session_state:
+        precio_estimado = reg.predict(input_data)[0]
+        if 'key' not in st.session_state:
                 st.session_state['key'] = st.session_state.precio_estimado
-            st.session_state.precio_estimado = f"${precio_estimado:,.2f}"
-            st.rerun()
-            st.session_state.button_text = "Predecir"
+        st.session_state.precio_estimado = f"${precio_estimado:,.2f}"
+        st.rerun()
+        st.session_state.button_text = "Predecir"
         
         
         
