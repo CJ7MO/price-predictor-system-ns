@@ -183,8 +183,13 @@ st.markdown("""
 
 
 col1, col2, col3 = st.columns([0.4690, 0.062, 0.4690])
+if 'clicked' not in st.session_state:
+    st.session_state.clicked = False
+
+def click_button():
+    st.session_state.clicked = True
 with col2:
-    if st.button("Predict", key="predict_button"):
+    if st.button("Predecir", key="predict_button", on_click=click_button):
         precio_estimado = reg.predict(input_data)[0]
         if 'key' not in st.session_state:
                 st.session_state['key'] = st.session_state.precio_estimado
