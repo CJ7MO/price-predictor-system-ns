@@ -197,6 +197,3 @@ with col2:
             st.warning("Por favor, ingresa valores válidos en todos los campos.")
         
         st.rerun()
-
-if st.session_state.precio_estimado:
-    st.success(f"Precio estimado: {st.session_state.precio_estimado}")
