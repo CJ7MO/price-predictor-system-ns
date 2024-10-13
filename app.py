@@ -191,5 +191,6 @@ with col2:
                 st.session_state['key'] = st.session_state.precio_estimado
         st.session_state.precio_estimado = f"${precio_estimado:,.2f}"
         st.session_state.button_text = "Predecir"
+        st.rerun()
                 
-st.rerun()       
+       
