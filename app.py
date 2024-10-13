@@ -176,22 +176,22 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # Convertir las entradas a float
-try:
-    area = float(area_input)
-    habitaciones = float(habitaciones_input)
-    baños = float(baños_input)
-    input_data = [[area, habitaciones, baños]]
-except ValueError:
-    st.warning("Por favor, ingresa valores numéricos en todos los campos.")
+# try:
+#     area = float(area_input)
+#     habitaciones = float(habitaciones_input)
+#     baños = float(baños_input)
+#     input_data = [[area, habitaciones, baños]]
+# except ValueError:
+#     st.warning("Por favor, ingresa valores numéricos en todos los campos.")
 
 col1, col2, col3 = st.columns([0.4690, 0.062, 0.4690])
 with col2:
     if st.button("Predecir", key="predict_button"):
         try:
-            precio_estimado = reg.predict(input_data)[0]
+            #precio_estimado = reg.predict(input_data)[0]
             if 'key' not in st.session_state:
                 st.session_state['key'] = st.session_state.precio_estimado
-            st.session_state.precio_estimado = f"${precio_estimado:,.2f}"
+            #st.session_state.precio_estimado = f"${precio_estimado:,.2f}"
             st.session_state.button_text = "Predicción realizada"
         
         except ValueError:
