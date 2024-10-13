@@ -190,7 +190,7 @@ try:
     baños = float(baños_input)
     input_data = [[area, habitaciones, baños]]
 except ValueError:
-    st.warning("Por favor, ingresa valores numéricos en todos los campos.")
+    st.warning("Por favor, ingresa valores numéricos en los campos de las variables predictoras.")
 
 col1, col2, col3 = st.columns([0.4690, 0.062, 0.4690])
 with col2:
