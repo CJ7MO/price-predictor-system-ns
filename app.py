@@ -181,6 +181,14 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
+st.markdown("""
+    <style>
+    .stButton button {
+        width: 100%;  /* O puedes ajustar el porcentaje para pantallas pequeñas */
+        white-space: nowrap;  /* Evita que el texto se divida en varias líneas */
+    }
+    </style>
+""", unsafe_allow_html=True)
 
 col1, col2, col3 = st.columns([0.4690, 0.062, 0.4690])
 with col2:
